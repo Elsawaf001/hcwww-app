@@ -34,7 +34,7 @@ export class ActivityComponent implements OnInit{
           next : (response : Activity[]) => {
             response.forEach(activity => this.activityDataSource.push(activity))
             localStorage.setItem('activities' , JSON.stringify(response))
-            this.toastrService.success("تم تحميل الانشطة بنجاح")
+            // this.toastrService.success("تم تحميل الانشطة بنجاح")
           } ,
           error : (err : HttpErrorResponse) => {
             this.toastrService.error(err.error.message , "فشل تحميل الانشطة")

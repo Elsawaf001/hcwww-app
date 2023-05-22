@@ -17,6 +17,7 @@ import {OrderSubscriberService} from "./service/order-subscriber.service";
 import {RealStateOrderService} from "./service/real-state-order.service";
 import {NotificationModule} from "./notification/notification.module";
 import {ToastContainerDirective, ToastrModule} from "ngx-toastr";
+import {NgOptimizedImage} from "@angular/common";
 
 
 
@@ -32,11 +33,12 @@ import {ToastContainerDirective, ToastrModule} from "ngx-toastr";
   ],
   imports: [
     BrowserModule,
-    AppRouterModule ,
-    HttpClientModule ,
+    AppRouterModule,
+    HttpClientModule,
     NotificationModule,
     ToastrModule.forRoot(),
-    ToastContainerDirective ,
+    ToastContainerDirective,
+    NgOptimizedImage,
 
 
   ],

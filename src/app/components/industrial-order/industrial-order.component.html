@@ -1,3 +1,137 @@
-<app-order-subscriber></app-order-subscriber>
-<app-activity></app-activity>
-<app-licence-area></app-licence-area>
+
+<div class="container">
+
+  <div class="d-flex flex-row mb-3  justify-content-between align-items-center ">
+    <div class="p-2">
+      <div>
+        <div class="input-group-lg mb-3   ">
+        <span class="input-group-text bg-info " >  إسم المستخدم :- </span>
+        <input type="text" class="form-control " placeholder="ADMIN" aria-label="Username" aria-describedby="basic-addon1" readonly >
+        </div>
+        </div>
+    </div>
+    <div class="p-2">
+      <h1 class="h1 fs-1 fw-bolder text-center">إنشاء طلب</h1>
+
+
+      <div class="card text-bg-warning mt-lg-5 " >
+        <div class="card-body" >
+
+
+          <div class="input-group mb-3   ">
+            <label class="input-group-text  " >نوع الطلب</label>
+            <input type="number" class="form-control m-1 text-center"  value="1" readonly>
+
+            <input type="text" class="form-control m-1 bg-info"  readonly value="ترخيص صناعى" >
+            <label class="input-group-text " >التكلفة</label>
+            <input type="number" class="form-control m-1" readonly >
+
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="p-2">
+      <div class="d-flex flex-column mb-3">
+        <img ngSrc="assets/logo.jpg"
+             class="img-thumbnail "
+             alt="Logo"
+             height="200"
+             width="200">
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="card text-bg-warning mb-3" >
+    <div class="card-header text-center">طلب ترخيص صناعى</div>
+    <div class="card-body">
+
+      <div class="row mb-3">
+        <div class="col-3">
+          <div class="input-group mb-3  ">
+            <span class="input-group-text bg-info" >رقم الطلب</span>
+            <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly >
+          </div>
+        </div>
+
+      </div>
+
+
+
+<div class="mb-lg-5">
+      <app-order-subscriber></app-order-subscriber>
+
+      <app-activity></app-activity>
+
+      <app-licence-area ></app-licence-area>
+</div>
+
+
+
+
+
+
+
+      <div class="row" >
+        <div class="col-4">
+          <div class="input-group mb-3  ">
+            <span class="input-group-text" id="basic-addon1"> إسم المندوب</span>
+            <input type="text" class="form-control " placeholder=" المندوب" >
+          </div>
+        </div>
+
+
+        <div class="col-6" >
+          <div class="input-group mb-3  ">
+            <span class="input-group-text" >إسم مدير المنشأة</span>
+            <input type="text" class="form-control " placeholder=" مدير المنشأة">
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+      <div class="d-flex flex-row mb-3  justify-content-between align-items-center mt-lg-1" >
+        <div class="p-2">
+          <div class="input-group mb-3  ">
+            <span class="input-group-text" > ملاحظات</span>
+            <input type="text" class="form-control " placeholder=" ملاحظات" >
+          </div>
+        </div>
+
+
+        <div class="p-2 " >
+          <div class="btn-group mb-3  ">
+            <button class="btn btn-lg btn-primary ms-lg-5">إنشاء الطلب</button>
+            <button class="btn  btn-danger ms-lg-5">الغاء </button>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
