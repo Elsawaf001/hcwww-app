@@ -1,0 +1,202 @@
+
+
+
+
+
+
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-3">
+      <div class="input-group mb-3  ">
+        <span class="input-group-text" id="basic-addon1">رقم المشترك</span>
+        <input type="text" class="form-control " placeholder="بيانات المشتركين" aria-label="Username" aria-describedby="basic-addon1" readonly (dblclick)="showTable = true ; selectedSubscriber = undefined" (click)="showTable=false">
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <table *ngIf="showTable" class="table table-striped table-sm table-bordered table-hover" >
+
+    <thead>
+    <tr class="table-info ">
+      <th>رقم المشترك</th>
+      <th>الاسم</th>
+      <th>العنوان</th>
+      <th>القطاع</th>
+      <th>المجموعة</th>
+      <th>المنطقة</th>
+      <th>البلوك</th>
+      <th>المحافظة</th>
+      <th>الفرع</th>
+      <th>الرقم القومى</th>
+      <th>رقم الهاتف</th>
+      <th>اسم المنشأة</th>
+      <th>الرصيد</th>
+      <th>رقم الهاتف الثانى</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let subscriber of subscribersDataSource" (click)="selectedSubscriber = subscriber ; showTable = false">
+      <td class="">{{subscriber.id}}</td>
+      <td>{{subscriber.name}} </td>
+      <td>{{subscriber.address}}</td>
+      <td>{{subscriber.sector}}</td>
+      <td>{{subscriber.group}}</td>
+      <td>{{subscriber.area}}</td>
+      <td>{{subscriber.block}}</td>
+      <td>{{subscriber.state}}</td>
+      <td>{{subscriber.branch}}</td>
+      <td>{{subscriber.nationalId}}</td>
+      <td>{{subscriber.phoneNumber}}</td>
+      <td>{{subscriber.facilityName}}</td>
+      <td>{{subscriber.balance}}</td>
+      <td>{{subscriber.secondPhoneNumber}}</td>
+
+
+
+    </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+  <div class="card text-bg-info mb-3 border-success" *ngIf="selectedSubscriber">
+  <div class="card-header">بيانات المشترك</div>
+  <div class="card-body">
+   <form >
+
+
+     <div class="row">
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >القطاع</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.sector">
+         </div>
+       </div>
+
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >الفرع</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.branch">
+         </div>
+       </div>
+
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >المجموعة</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.group">
+         </div>
+       </div>
+
+
+     </div>
+
+
+     <div class="row">
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >المنطقة</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.area">
+         </div>
+       </div>
+
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >البلوك</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.block">
+         </div>
+       </div>
+
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >حالة الصرف</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.state">
+         </div>
+       </div>
+
+
+     </div>
+
+
+     <div class="row">
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >إسم المنشأة</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.facilityName">
+         </div>
+       </div>
+
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >العنوان</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.address">
+         </div>
+       </div>
+
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >رقم الهاتف</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.phoneNumber">
+         </div>
+       </div>
+
+
+     </div>
+
+
+     <div class="row">
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >الرصيد</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.balance">
+         </div>
+       </div>
+
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >الرقم القومى</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.nationalId">
+         </div>
+       </div>
+
+       <div class="col-4">
+         <div class="input-group mb-3  ">
+           <span class="input-group-text" >رقم الهاتف الثانى</span>
+           <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedSubscriber.secondPhoneNumber">
+         </div>
+       </div>
+
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </form>
+  </div>
+  <div class="card-footer bg-transparent border-success"> بيانات المشترك :- {{selectedSubscriber.name}} </div>
+
+</div>
+
+
+
+
+</div>
