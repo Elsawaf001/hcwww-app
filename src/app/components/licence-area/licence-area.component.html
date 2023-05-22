@@ -1,1 +1,48 @@
-<p>licence-area works!</p>
+
+<div class="container">
+
+
+  <div class="row" >
+    <div class="col-3">
+      <div class="input-group mb-3  ">
+        <span class="input-group-text" id="basic-addon1">منطقة التراخيص</span>
+        <input type="text" class="form-control " placeholder="مناطق التراخيص" aria-label="Username" aria-describedby="basic-addon1"
+               readonly (dblclick)="showTable = true ; selectedLicense = undefined" (click)="showTable=false">
+      </div>
+    </div>
+
+
+    <div class="col-6" *ngIf="selectedLicense">
+      <div class="input-group mb-3  ">
+        <span class="input-group-text" >إسم منطقة التراخيص</span>
+        <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedLicense.licenceAreaName">
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <table  class="table table-striped table-sm table-bordered table-hover " *ngIf="showTable"  style="width: 15rem;">
+
+    <thead>
+    <tr class="table-info ">
+      <th>رقم منطقة التراخيص</th>
+      <th>إسم منطقة التراخيص</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let area of licences" (click)="selectedLicense = area ; showTable = false">
+      <td class="">{{area.id}}</td>
+      <td class="">{{area.licenceAreaName}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+

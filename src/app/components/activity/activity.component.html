@@ -1,1 +1,63 @@
-<p>activity works!</p>
+
+<div class="container">
+
+
+    <div class="row" >
+      <div class="col-3">
+        <div class="input-group mb-3  ">
+          <span class="input-group-text" id="basic-addon1">نوع النشاط</span>
+          <input type="text" class="form-control " placeholder="الانشطة" aria-label="Username" aria-describedby="basic-addon1"
+                 readonly (dblclick)="showTable = true ; selectedActivity = undefined" (click)="showTable=false">
+        </div>
+      </div>
+
+
+      <div class="col-4" *ngIf="selectedActivity">
+        <div class="input-group mb-3  ">
+          <span class="input-group-text" >النشاط</span>
+          <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedActivity.activityName">
+        </div>
+      </div>
+
+      <div class="col-4" *ngIf="selectedActivity">
+        <div class="input-group mb-3  ">
+          <span class="input-group-text" >عنوان النشاط</span>
+          <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly [value]="selectedActivity.activityAddress">
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+    <table  class="table table-striped table-sm table-bordered table-hover " *ngIf="showTable"  style="width: 25rem;">
+
+      <thead>
+      <tr class="table-info ">
+        <th>رقم النشاط</th>
+        <th>الاسم</th>
+        <th>العنوان</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let activity of activityDataSource" (click)="selectedActivity = activity ; showTable = false">
+        <td class="">{{activity.id}}</td>
+        <td class="">{{activity.activityName}}</td>
+        <td class="">{{activity.activityAddress}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+
+
+
+
+
