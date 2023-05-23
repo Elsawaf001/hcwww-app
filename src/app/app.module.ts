@@ -19,6 +19,9 @@ import {NotificationModule} from "./notification/notification.module";
 import {ToastContainerDirective, ToastrModule} from "ngx-toastr";
 import {NgOptimizedImage} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {HomeComponent} from "./components/home/home.component";
+import {LoginComponent} from "./components/login/login.component";
+import {RegisterComponent} from "./components/register/register.component";
 
 
 
@@ -30,7 +33,10 @@ import {FormsModule} from "@angular/forms";
     IndustrialOrderComponent,
     LicenceAreaComponent,
     OrderSubscriberComponent,
-    RealStateOrderComponent
+    RealStateOrderComponent ,
+    HomeComponent ,
+    LoginComponent ,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
