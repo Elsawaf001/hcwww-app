@@ -24,7 +24,7 @@
 
             <input type="text" class="form-control m-1 bg-info"  readonly value="ترخيص صناعى" >
             <label class="input-group-text " >التكلفة</label>
-            <input type="number" class="form-control m-1" readonly >
+            <input type="number" class="form-control m-1" [(ngModel)]="cost"  >
 
           </div>
 
@@ -49,7 +49,7 @@
   </div>
 
 
-  <div class="card text-bg-warning mb-3" >
+  <div *ngIf="!showSuccess" class="card text-bg-warning mb-3" >
     <div class="card-header text-center">طلب ترخيص صناعى</div>
     <div class="card-body">
 
@@ -66,11 +66,11 @@
 
 
 <div class="mb-lg-5">
-      <app-order-subscriber></app-order-subscriber>
+      <app-order-subscriber (onSave)="setSubscriberId($event)" ></app-order-subscriber>
 
-      <app-activity></app-activity>
+      <app-activity (onSave)="setActivityId($event)"></app-activity>
 
-      <app-licence-area ></app-licence-area>
+      <app-licence-area (onSave)="setLicenceAreaId($event)"></app-licence-area>
 </div>
 
 
@@ -83,7 +83,7 @@
         <div class="col-4">
           <div class="input-group mb-3  ">
             <span class="input-group-text" id="basic-addon1"> إسم المندوب</span>
-            <input type="text" class="form-control " placeholder=" المندوب" >
+            <input type="text" class="form-control " placeholder=" المندوب" [(ngModel)]="representativeName">
           </div>
         </div>
 
@@ -91,7 +91,7 @@
         <div class="col-6" >
           <div class="input-group mb-3  ">
             <span class="input-group-text" >إسم مدير المنشأة</span>
-            <input type="text" class="form-control " placeholder=" مدير المنشأة">
+            <input type="text" class="form-control " placeholder=" مدير المنشأة" [(ngModel)]="facilityDirectorName">
           </div>
         </div>
 
@@ -104,14 +104,15 @@
         <div class="p-2">
           <div class="input-group mb-3  ">
             <span class="input-group-text" > ملاحظات</span>
-            <input type="text" class="form-control " placeholder=" ملاحظات" >
+            <input type="text" class="form-control " placeholder=" ملاحظات " [(ngModel)]="notes">
           </div>
         </div>
 
 
         <div class="p-2 " >
           <div class="btn-group mb-3  ">
-            <button class="btn btn-lg btn-primary ms-lg-5">إنشاء الطلب</button>
+            <button class="btn btn-lg btn-primary ms-lg-5" (click)="onSubmit()">إنشاء الطلب</button>
+
             <button class="btn  btn-danger ms-lg-5">الغاء </button>
 
           </div>
@@ -127,6 +128,61 @@
     </div>
   </div>
 
+
+  <div class="card text-bg-success mb-3" *ngIf="showSuccess" >
+    <div class="card-header text-center"><h1 class="bg-success">تم إنشاء طلبك بنجاح</h1></div>
+    <div class="card-body">
+
+      <div class="row mb-3">
+        <div class="col-3">
+          <div class="input-group mb-3  ">
+            <span class="input-group-text bg-info" >رقم الطلب</span>
+            <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly value="{{responseId}}">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-9">
+          <div class="input-group mb-3  ">
+            <span class="input-group-text bg-info" >إسم المشترك</span>
+            <input type="text" class="form-control " placeholder="" aria-label="Username" aria-describedby="basic-addon1" readonly value="{{responseSubscriber}}">
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="mb-lg-5">
+
+      </div>
+
+
+
+
+
+        <div class="p-2 " >
+          <div class="btn-group mb-3  ">
+
+            <button class="btn  btn-danger ms-lg-5"
+                    (click)="showSuccess = false ; representativeName ='';
+                              facilityDirectorName= '';
+                               notes = '';
+                                cost = 0;">الرجوع </button>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
 
 </div>
 

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Activity} from "../../model/activity";
 import {ActivityService} from "../../service/activity.service";
 import {Subscription} from "rxjs";
@@ -15,6 +15,7 @@ export class ActivityComponent implements OnInit{
   selectedActivity : Activity | undefined ;
 
 
+  @Output() onSave: EventEmitter<number> = new EventEmitter<number>();
 
 
   activityDataSource : Activity[] = [];

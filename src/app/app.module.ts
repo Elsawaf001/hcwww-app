@@ -18,6 +18,7 @@ import {RealStateOrderService} from "./service/real-state-order.service";
 import {NotificationModule} from "./notification/notification.module";
 import {ToastContainerDirective, ToastrModule} from "ngx-toastr";
 import {NgOptimizedImage} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -39,6 +40,7 @@ import {NgOptimizedImage} from "@angular/common";
     ToastrModule.forRoot(),
     ToastContainerDirective,
     NgOptimizedImage,
+    FormsModule,
 
 
   ],

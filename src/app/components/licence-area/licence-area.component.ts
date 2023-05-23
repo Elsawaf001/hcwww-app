@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Activity} from "../../model/activity";
 import {Subscription} from "rxjs";
 import {LicenceArea} from "../../model/licence-area";
@@ -15,6 +15,7 @@ export class LicenceAreaComponent implements OnInit{
   selectedLicense : LicenceArea | undefined ;
 
 
+  @Output() onSave: EventEmitter<number> = new EventEmitter<number>();
 
   licences : LicenceArea[] = [];
 

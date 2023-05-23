@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {OrderSubscriber} from "../../model/order-subscriber";
 import {Subscription} from "rxjs";
 import {OrderSubscriberService} from "../../service/order-subscriber.service";
@@ -15,11 +15,12 @@ showTable: boolean = false;
 selectedSubscriber : OrderSubscriber | undefined;
 
 
-
+@Output() onSave: EventEmitter<number> = new EventEmitter<number>();
   subscribersDataSource : OrderSubscriber[] = [];
 
   private subscriptions:Subscription[] = [];
   opened: boolean = false;
+
 
 
 
@@ -59,5 +60,6 @@ selectedSubscriber : OrderSubscriber | undefined;
     this.getAllSubscribers()
 
   }
+
 
 }

@@ -7,7 +7,7 @@
         <div class="input-group mb-3  ">
           <span class="input-group-text" id="basic-addon1">نوع النشاط</span>
           <input type="text" class="form-control " placeholder="الانشطة" aria-label="Username" aria-describedby="basic-addon1"
-                 readonly (dblclick)="showTable = true ; selectedActivity = undefined" (click)="showTable=false">
+                 readonly (dblclick)="showTable = true ; selectedActivity = undefined " (click)="showTable=false">
         </div>
       </div>
 
@@ -45,7 +45,7 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let activity of activityDataSource" (click)="selectedActivity = activity ; showTable = false">
+      <tr *ngFor="let activity of activityDataSource" (click)="selectedActivity = activity ; showTable = false ; onSave.emit(activity.id)">
         <td class="">{{activity.id}}</td>
         <td class="">{{activity.activityName}}</td>
         <td class="">{{activity.activityAddress}}</td>

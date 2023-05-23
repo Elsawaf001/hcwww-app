@@ -41,7 +41,7 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let subscriber of subscribersDataSource" (click)="selectedSubscriber = subscriber ; showTable = false">
+    <tr *ngFor="let subscriber of subscribersDataSource" (click)="selectedSubscriber = subscriber ; showTable = false ; onSave.emit(subscriber.id)">
       <td class="">{{subscriber.id}}</td>
       <td>{{subscriber.name}} </td>
       <td>{{subscriber.address}}</td>
@@ -69,7 +69,7 @@
 
 
 
-  <div class="card text-bg-info mb-3 border-success" *ngIf="selectedSubscriber">
+  <div class="card text-bg-info mb-3 border-success" *ngIf="selectedSubscriber"  >
   <div class="card-header">بيانات المشترك</div>
   <div class="card-body">
    <form >

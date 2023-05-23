@@ -36,7 +36,7 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let area of licences" (click)="selectedLicense = area ; showTable = false">
+    <tr *ngFor="let area of licences" (click)="selectedLicense = area ; showTable = false ; onSave.emit(area.id)">
       <td class="">{{area.id}}</td>
       <td class="">{{area.licenceAreaName}}</td>
     </tr>
